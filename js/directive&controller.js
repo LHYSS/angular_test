@@ -1,24 +1,25 @@
-var myModule=agular.module('myModule',[]);
-myModule.controller('myCtrl',['$scope',function($scope){
-	$scope.loadData=function(){
+var myModule = agular.module('myModule', []);
+myModule.controller('myCtrl', ['$scope', function($scope) {
+	$scope.loadData = function() {
 		console.log('数据加载中。。。')；
 	};
 
 }]);
-myModule.controller('myCtr2',['$scope',function($scope){
-	$scope.loadData2=function(){
+myModule.controller('myCtr2', ['$scope', function($scope) {
+	$scope.loadData2 = function() {
 		console.log('数据加载中。。。2222')；
 	};
 
 }]);
-myModule.directive('loader', function(){
+myModule.directive('loader', function() {
 	// Runs during compile
 	return {
-		restrict:'AE';
+		restrict: 'AE';
 		link: function($scope, iElm, iAttrs, controller) {
-			iElm.bind('mouseenter',function(event){
+			iElm.bind('mouseenter', function(event) {
 				$scope.$apply(iAttrs.howtoload);
 			})
 		}
 	};
 });
+
